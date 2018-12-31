@@ -136,6 +136,13 @@ addnode=89.252.164.26
 addnode=89.252.164.27
 addnode=89.252.164.28
 addnode=212.154.74.91
+addnode=89.252.164.29
+addnode=199.247.1.124
+addnode=80.240.30.170
+addnode=89.252.164.29
+addnode=140.82.13.16
+addnode=8.12.16.244
+addnode=149.28.53.16
 EOF
 }
 
