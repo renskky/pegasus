@@ -33,17 +33,17 @@ fi
 
 if [ -n "$(pidof pegasusd)" ]; then
   echo -e "${GREEN}\c"
-  read -e -p "pegasusd is already running. Do you want to add another MN? [Y/N]" NEW_CROP
+  read -e -p "pegasusd is already running. Do you want to add another MN? [Y/N]" NEW_PEG
   echo -e "{NC}"
   clear
 else
-  NEW_CROP="new"
+  NEW_PEG="new"
 fi
 }
 
 function prepare_system() {
 
-echo -e "Prepare the system to install Cropcoin master node."
+echo -e "Prepare the system to install pegasus master node."
 apt-get update >/dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
 apt install -y software-properties-common >/dev/null 2>&1
@@ -100,7 +100,7 @@ function ask_permission() {
  read -e VOL
 }
 
-function compile_cropcoin() {
+function compile_pegasus() {
   echo -e "Clone git repo and compile it. This may take some time. Press a key to continue."
   read -n 1 -s -r -p ""
 
