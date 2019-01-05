@@ -4,7 +4,7 @@ TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE="pegasus.conf"
 BINARY_FILE="/usr/local/bin/pegasusd"
 CROP_REPO="https://github.com/Cropdev/CropDev.git"
-COIN_TGZ='https://www.dropbox.com/s/gcdtyxeb5vkpdx6/pegasus.tar.gz'
+COIN_TGZ='https://www.dropbox.com/preview/pegasusd.gz?role=personal'
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
