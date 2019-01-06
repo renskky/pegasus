@@ -1,14 +1,43 @@
 #!/bin/bash
 
+#!/bin/bash
+
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE="pegasus.conf"
-BINARY_FILE="/usr/local/bin/pegasusd"
-PEG_REPO="https://github.com/udaydeep1992/PEGASUS-COIN-MN-SCRIPT.git"
-COIN_TGZ='https://www.dropbox.com/s/4tsjw0b0me2e3ey/pegasus.tar.gz'
+CONFIG_FILE='pegasus.conf'
+CONFIGFOLDER='/root/.pegasus'
+COIN_DAEMON='pegasusd'
+COIN_CLI='pegasus-cli'
+COIN_PATH='/usr/local/bin/'
+COIN_TGZ='https://www.dropbox.com/s/gcdtyxeb5vkpdx6/pegasus.tar.gz'
+COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
+COIN_NAME='pegasus'
+COIN_PORT=2171
+RPC_PORT=2170
+
+NODEIP=$(curl -s4 api.ipify.org)
+
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
+
+
+function download_node() {
+  echo -e "Prepare to download ${GREEN}$COIN_NAME${NC}."
+   cd $TMP_FOLDER
+  wget -q $COIN_REPO
+  compile_error
+   COIN_ZIP=$(echo $COIN_REPO | awk -F'/' '{print $NF}')
+  tar xvzf $COIN_ZIP >/dev/null 2>&1
+  compile_error
+  cp pegasus* /usr/local/bin
+  compile_error
+  strip $COIN_DAEMON $COIN_CLI
+  cd -
+  rm -rf $TMP_FOLDER >/dev/null 2>&1
+  clear
+}
+
 
 
 function compile_error() {
