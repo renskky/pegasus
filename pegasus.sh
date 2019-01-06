@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE='pegasus.conf'
 CONFIGFOLDER='/root/.pegasus'
